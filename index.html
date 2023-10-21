@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Linear Slide Wizard</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1 class="title"><span>Linear Slide Wizard</span></h1>
+	</header>
+	<main>
+		<div class="results">
+			<div class="result-text">
+				<div id="extension-wrapper">
+					<label for="extension">Extension</label>
+					<input id="extension" type="range" min="0" max="1" step="0.001" value="0">
+					<span id="extension-display">000.0%</span>
+				</div><br>
+				<b>With Current Parameters</b>
+				<hr>
+				<span id="minimum-height-display"></span><br>
+				<span id="maximum-height-display"></span><br>
+				<br>
+				<b>In Order to Reach the Target</b>
+				<hr>
+				<span id="minimum-length-display"></span><br>
+				<span id="maximum-length-display"></span>
+			</div>
+			<div id="preview-wrapper">
+			</div>
+		</div>
+		<div class="parameters">
+			<div>
+				<label for="retracted-step">Retracted Step</label>
+				<hr>
+				<input id="retracted-step" type="number" min="0" value="0.625">
+				<select id="retracted-step-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The <b>Retracted Step</b> is the offset between the bottoms of two adjacent bars when the linear slide is retracted.</p>
+			</div>
+			<div>
+				<label for="extended-step">Extended Step</label>
+				<hr>
+				<input id="extended-step" type="number" min="0" value="2.25">
+				<select id="extended-step-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The <b>Extended Step</b> is the offset between the bottoms of two adjacent bars when the linear slide is extended.</p>
+			</div>
+			
+			<div>
+				<label for="target-retracted-height">Target Retracted Height</label>
+				<hr>
+				<input id="target-retracted-height" type="number" min="0" value="17">
+				<select id="target-retracted-height-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The <b>Target Retracted Height</b> is height that the linear slide should be from the floor to the top when it is retracted</p>
+			</div>
+			<div>
+				<label for="target-extended-height">Target Extended Height</label>
+				<hr>
+				<input id="target-extended-height" type="number" min="0" value="33.125">
+				<select id="target-extended-height-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The <b>Target Extended Height</b> is height that the linear slide should be from the floor to the tippity top when it is extended.</p>
+			</div>
+			<div>
+				<label for="number-of-segments">Number of Segments</label>
+				<hr>
+				<input id="number-of-segments" type="number" min="1" value="4">
+				<p>The <b>Number of Segments</b> is the number of segments in the linear slide.</p>
+			</div>
+			<div>
+				<label for="bar-length">Bar Length</label>
+				<hr>
+				<input id="bar-length" type="number" min="0" value="10">
+				<select id="bar-length-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The Bar Length is the length of (usually) the 80/20, 20/20, 15/15, etc.</p>
+			</div>
+			<div>
+				<label for="chasis-height">Chasis Height</label>
+				<hr>
+				<input id="chasis-height" type="number" min="0" value="4.625">
+				<select id="chasis-height-units">
+					<option value="25.4">in</option>
+					<option value="1">mm</option>
+					<option value="201168">fur</option>
+				</select>
+				<p>The <b>Chasis Height</b> is distance from the floor to the top of the chasis (of  whatever the linear slide is attached to).</p>
+			</div>
+            <div>
+				<label for="tension-drop">Tension Drop</label>
+				<hr>
+				<input id="tension-drop" type="number" min="0" max="100" value="5">
+				<p>The <b>Tension Drop</b> is the percentage drop in height per segment due to the lack of perfect string tension.</p>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
